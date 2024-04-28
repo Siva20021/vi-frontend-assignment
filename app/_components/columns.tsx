@@ -4,8 +4,18 @@ import { Badge } from "@/components/ui/badge";
 import { type ColumnDef } from "@tanstack/react-table";
 import { labels, priorities, statuses } from "../_constants/metadata";
 import { type Task } from "../_constants/schema";
-
+import { Checkbox } from "@/components/ui/checkbox";
 export const columns: Array<ColumnDef<Task>> = [
+    
+    
+    {
+        accessorKey: "selected",
+        header: ({ column }) => <Checkbox/>,
+        cell: ({ row }) =>  <Checkbox
+        checked={row.getIsSelected()}
+        onChange={row.getToggleSelectedHandler()}/>,
+        
+    },
     {
         accessorKey: "id",
         header: ({ column }) => <span>Task</span>,

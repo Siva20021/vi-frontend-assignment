@@ -14,6 +14,7 @@ const generateData = () => {
         status: faker.helpers.arrayElement(statuses).value,
         label: faker.helpers.arrayElement(labels).value,
         priority: faker.helpers.arrayElement(priorities).value,
+        selected:false,
     }));
 };
 
